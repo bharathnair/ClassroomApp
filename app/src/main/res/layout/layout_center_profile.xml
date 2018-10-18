@@ -42,7 +42,7 @@
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:id="@+id/profile_image"
+                        android:id="@+id/profile_photo"
                         app:civ_border_color="@color/black"
                         app:civ_border_width="2dp"
                         android:layout_centerVertical="true"/>
@@ -85,7 +85,7 @@
                     android:id="@+id/description"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:text="Bharath"
+                    android:text="About Me"
                     android:textSize="16sp"
                     android:layout_marginTop="5dp"/>
 
@@ -95,7 +95,7 @@
                     android:id="@+id/website"
                     android:textColor="@color/blue"
                     android:textStyle="bold"
-                    android:text="Bharath"
+                    android:text="My Website"
                     android:textSize="16sp"
                     android:layout_marginTop="5dp" />
 
@@ -109,7 +109,7 @@
                 android:layout_marginBottom="50dp">
 
                 <GridView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/gridView"
                     android:numColumns="3"

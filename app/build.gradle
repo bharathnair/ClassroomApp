@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.nair.bharath.instaclone"
+        applicationId "com.nair.bharath.Pillaigram"
         minSdkVersion 23
         targetSdkVersion 28
         versionCode 1
@@ -20,6 +20,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     testImplementation 'junit:junit:4.12'
@@ -35,5 +36,19 @@ dependencies {
 
     //Circle ImageView
     implementation 'de.hdodenhof:circleimageview:2.2.0'
+
+    //Universal Image Loader
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    implementation 'org.jetbrains:annotations-java5:15.0'
+
+    //Firebase authentication
+    implementation 'com.google.firebase:firebase-auth:16.0.4'
+    implementation 'com.google.firebase:firebase-core:16.0.4'
 }
+
+dependencies { implementation 'com.android.support:support-annotations:28.0.0' }
+
+//firebase
+apply plugin: 'com.google.gms.google-services'
+
 

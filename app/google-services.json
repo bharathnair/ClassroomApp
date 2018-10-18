@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "602702892372",
+    "firebase_url": "https://pillaigram.firebaseio.com",
+    "project_id": "pillaigram",
+    "storage_bucket": "pillaigram.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:602702892372:android:f65bdcea328d8143",
+        "android_client_info": {
+          "package_name": "com.nair.bharath.Pillaigram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "602702892372-i12mi3d5ekikd1ajkl43jc2f0o6ovnu5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nair.bharath.Pillaigram",
+            "certificate_hash": "b18dba954a0ca9b400cf659da4074212f0f40d40"
+          }
+        },
+        {
+          "client_id": "602702892372-8pglmle0iia04o8pqrvj3ft2rd3rurd8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiI99Z1IZbo0-PTmpZi3eqY6CwEzbvImk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "602702892372-8pglmle0iia04o8pqrvj3ft2rd3rurd8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
