@@ -10,31 +10,30 @@ import java.util.List;
 /**
  * Class that stores fragments for tabs
  */
-public class SectionPagerAdapter extends FragmentPagerAdapter
-{
-    private static final String TAG = "SectionPagerAdapter";
+public class SectionPagerAdapter extends FragmentPagerAdapter {
 
-    private final List<Fragment> mFragmentList = new ArrayList<>();                                     /*mFragmentList is a list which holds the fragments to swap through them with tabs*/
+    private static final String TAG = "SectionsPagerAdapter";
 
-    public SectionPagerAdapter(FragmentManager fm)
-    {
+    private final List<Fragment> mFragmentList = new ArrayList<>();
+
+
+    public SectionPagerAdapter(FragmentManager fm) {
         super(fm);
     }
 
     @Override
-    public Fragment getItem(int position)                                                               /*get an item from the list*/
-    {
+    public Fragment getItem(int position) {
         return mFragmentList.get(position);
     }
 
+
     @Override
-    public int getCount()
-    {
+    public int getCount() {
         return mFragmentList.size();
     }
 
-    public void addFragment(Fragment fragment)                                                            //adding fragments to the list
-    {
+    public void addFragment(Fragment fragment){
         mFragmentList.add(fragment);
     }
+
 }

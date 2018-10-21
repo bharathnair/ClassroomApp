@@ -23,7 +23,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/D:/Softwares/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/av/ic_art_track_black_24dp.xml" />
+                                                <entry key="url" value="jar:file:/D:/Softwares/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/content/ic_clear_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -33,9 +33,11 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="imageAsset" value="C:\Users\Brave\Desktop\university.png" />
-                                      <entry key="outputName" value="ic_username" />
-                                      <entry key="themeColor" value="000000" />
+                                      <entry key="assetType" value="IMAGE" />
+                                      <entry key="imageAsset" value="C:\Users\Brave\Desktop\ic_video_white.png" />
+                                      <entry key="outputName" value="ic_video_white" />
+                                      <entry key="theme" value="HOLO_DARK" />
+                                      <entry key="themeColor" value="1c1cc5" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -54,6 +56,11 @@
                 </map>
               </option>
             </PersistentState>
+          </value>
+        </entry>
+        <entry key="vectorWizard">
+          <value>
+            <PersistentState />
           </value>
         </entry>
       </map>

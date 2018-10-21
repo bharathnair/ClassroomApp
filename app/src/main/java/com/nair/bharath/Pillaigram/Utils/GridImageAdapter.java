@@ -1,6 +1,5 @@
 package com.nair.bharath.Pillaigram.Utils;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
@@ -18,7 +17,7 @@ import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 
 import java.util.ArrayList;
 
-public class GridImageAdapter extends ArrayAdapter<String> {
+public class GridImageAdapter extends ArrayAdapter<String>{
 
     private Context mContext;
     private LayoutInflater mInflater;
@@ -40,29 +39,24 @@ public class GridImageAdapter extends ArrayAdapter<String> {
         ProgressBar mProgressBar;
     }
 
-
-
-    @SuppressLint("WrongViewCast")
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
-        /**
-         * Viewholder build pattern (Similar to recyclerview)
+        /*
+        Viewholder build pattern (Similar to recyclerview)
          */
-
         final ViewHolder holder;
-
         if(convertView == null){
             convertView = mInflater.inflate(layoutResource, parent, false);
-            holder = new ViewHolder();
+            holder = new ViewHolder() {
+            };
             holder.mProgressBar = (ProgressBar) convertView.findViewById(R.id.gridImageProgressbar);
             holder.image = (SquareImageView) convertView.findViewById(R.id.gridImageView);
 
-            convertView.setTag(holder);                                                                 //tag stores widget in memory. viewholder creates widget and tag holds viewholder
-        }                                                                                               //storing view in memory and not on app. results in app not slowing down
-        else
-        {
+            convertView.setTag(holder);
+        }
+        else{
             holder = (ViewHolder) convertView.getTag();
         }
 
@@ -70,42 +64,38 @@ public class GridImageAdapter extends ArrayAdapter<String> {
 
         ImageLoader imageLoader = ImageLoader.getInstance();
 
-        imageLoader.displayImage(mAppend + imgURL, holder.image, new ImageLoadingListener()
-        {
+        imageLoader.displayImage(mAppend + imgURL, holder.image, new ImageLoadingListener() {
             @Override
-            public void onLoadingStarted(String imageUri, View view)
-            {
-                if (holder.mProgressBar != null)
-                {
+            public void onLoadingStarted(String imageUri, View view) {
+                if(holder.mProgressBar != null){
                     holder.mProgressBar.setVisibility(View.VISIBLE);
                 }
             }
 
             @Override
-            public void onLoadingFailed(String imageUri, View view, FailReason failReason)
-            {
-                if (holder.mProgressBar != null)
-                {
+            public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
+                if(holder.mProgressBar != null){
                     holder.mProgressBar.setVisibility(View.GONE);
                 }
             }
 
             @Override
-            public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage)
-            {
-                if (holder.mProgressBar != null) {
+            public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
+                if(holder.mProgressBar != null){
                     holder.mProgressBar.setVisibility(View.GONE);
                 }
             }
 
             @Override
-            public void onLoadingCancelled(String imageUri, View view)
-            {
-                if (holder.mProgressBar != null) {
+            public void onLoadingCancelled(String imageUri, View view) {
+                if(holder.mProgressBar != null){
                     holder.mProgressBar.setVisibility(View.GONE);
                 }
             }
         });
+
         return convertView;
     }
 }
+
+

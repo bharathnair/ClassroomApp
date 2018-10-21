@@ -1,5 +1,6 @@
 package com.nair.bharath.Pillaigram.Utils;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -15,58 +16,57 @@ import com.nair.bharath.Pillaigram.R;
 import com.nair.bharath.Pillaigram.Search.SearchActivity;
 import com.nair.bharath.Pillaigram.Share.ShareActivity;
 
-public class BottomNavigationViewHelper
-{
+public class BottomNavigationViewHelper {
+
     private static final String TAG = "BottomNavigationViewHel";
 
-    public static void setupBottomNavigationView(BottomNavigationViewEx bottomNavigationViewEx)
-    {
-        Log.d(TAG, "setupBottomNavigationView: setting up BottomNavigationView");
+    public static void setupBottomNavigationView(BottomNavigationViewEx bottomNavigationViewEx){
+        Log.d(TAG, "setupBottomNavigationView: Setting up BottomNavigationView");
         bottomNavigationViewEx.enableAnimation(false);
-        bottomNavigationViewEx.enableShiftingMode(false);
         bottomNavigationViewEx.enableItemShiftingMode(false);
+        bottomNavigationViewEx.enableShiftingMode(false);
         bottomNavigationViewEx.setTextVisibility(false);
-
-
     }
 
-    //how to navigate between activities
-    public static void enableNavigation(final Context context, BottomNavigationViewEx view)     //without 'final' cannot reference 'context' inside the override method
-    {
-        view.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener()    //instance class
-        {
+    public static void enableNavigation(final Context context, final Activity callingActivity, BottomNavigationViewEx view){
+        view.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
-            {
-                switch(menuItem.getItemId())
-                {
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+
                     case R.id.ic_house:
-                        Intent intent1 = new Intent(context, HomeActivity.class);     //ACTIVITY_NUM=0   //'context' is required in object of class to be the reference
-                        context.startActivity(intent1);                                                 //if directly done in homeactivity.java we need
-                        break;                                                                          //new Intent(HomeActivity.this, HomeActivity.class)
+                        Intent intent1 = new Intent(context, HomeActivity.class);//ACTIVITY_NUM = 0
+                        context.startActivity(intent1);
+                        callingActivity.overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        break;
 
                     case R.id.ic_search:
-                        Intent intent2 = new Intent(context, SearchActivity.class);     //ACTIVITY_NUM=1
+                        Intent intent2  = new Intent(context, SearchActivity.class);//ACTIVITY_NUM = 1
                         context.startActivity(intent2);
+                        callingActivity.overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                         break;
 
                     case R.id.ic_circle:
-                        Intent intent3 = new Intent(context, ShareActivity.class);      //ACTIVITY_NUM=2
+                        Intent intent3 = new Intent(context, ShareActivity.class);//ACTIVITY_NUM = 2
                         context.startActivity(intent3);
+                        callingActivity.overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                         break;
 
                     case R.id.ic_alert:
-                        Intent intent4 = new Intent(context, LikesActivity.class);      //ACTIVITY_NUM=3
+                        Intent intent4 = new Intent(context, LikesActivity.class);//ACTIVITY_NUM = 3
                         context.startActivity(intent4);
+                        callingActivity.overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                         break;
 
                     case R.id.ic_android:
-                        Intent intent5 = new Intent(context, ProfileActivity.class);        //ACTIVITY_NUM=4
+                        Intent intent5 = new Intent(context, ProfileActivity.class);//ACTIVITY_NUM = 4
                         context.startActivity(intent5);
+                        callingActivity.overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                         break;
                 }
-                return false;
 
+
+                return false;
             }
         });
     }
